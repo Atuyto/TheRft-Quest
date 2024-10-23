@@ -29,6 +29,10 @@ TagManager:
   - QDSUISection
   - SnapZone
   - Hand
+  - BlueColor
+  - RedColor
+  - GreenColor
+  - Canva
   layers:
   - Default
   - TransparentFX
