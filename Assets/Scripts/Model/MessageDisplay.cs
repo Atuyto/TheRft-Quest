@@ -21,8 +21,21 @@ public class MessageDisplay : MonoBehaviour
         {
             yield return new WaitForSeconds(1); // Mettre à jour toutes les secondes
             List<Message> messages = player.GetMessages();
-            messageText.text = string.Join("\n", messages);
+
+            if (messages != null && messages.Count > 0)
+            {
+                // Efface le texte précédent
+                messageText.text = "";
+
+                // Parcourir tous les messages et les ajouter à messageText
+                foreach (Message message in messages)
+                {
+                    messageText.text += message.ToString() + "\n"; 
+                }
+            }
+           
         }
     }
-    
 }
+    
+

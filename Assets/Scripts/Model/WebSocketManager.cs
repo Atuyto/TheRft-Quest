@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 public class WebSocketManager : MonoBehaviour
 {
     private WebSocket ws;
-    private string url = "ws://10.6.5.93:9001/ws?idpersonne=1";
+    private string url = "ws://192.168.1.34:9001/ws?idpersonne=1";
     private Player player;
 
     public static WebSocketManager Instance { get; private set; }
@@ -32,6 +32,11 @@ public class WebSocketManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
+
+        if (player == null)
+        {
+            Debug.LogError("Player instance not found in the scene.");
+        }
     }
 
     void InitializeWebSocket()
@@ -43,24 +48,27 @@ public class WebSocketManager : MonoBehaviour
         };
         ws.OnMessage += (sender, e) =>
         {
-           Debug.Log("Message : " + e.Data);
-           try {
-            MainThreadDispatcher.Instance().Enqueue(() =>{
+            Debug.Log("Message : " + e.Data);
+            
+                MainThreadDispatcher.Instance().Enqueue(() =>
+                {
+                    try
+                    {
+                        // Désérialisation et interaction avec des objets Unity sur le thread principal
+                        Message receivedMessage = JsonConvert.DeserializeObject<Message>(e.Data);
+                        Player.Instance.AddMessage(receivedMessage); // Cette ligne doit être sur le thread principal
+                    }
+                    catch (JsonException ex)
+                    {
+                        Debug.LogError("JSON deserialization error: " + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError("Unexpected error: " + ex.Message);
+                    }
 
-                Message receivedMessage = JsonConvert.DeserializeObject<Message>(e.Data);
-                Player.Instance.AddMessage(receivedMessage);
-
-            });
-               
-            }
-            catch (JsonException ex)
-            {
-                Debug.LogError("JSON deserialization error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError("Unexpected error: " + ex.Message);
-            }
+                });
+           
         };
         ws.OnError += (sender, e) =>
         {

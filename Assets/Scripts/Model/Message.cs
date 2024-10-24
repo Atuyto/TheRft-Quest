@@ -23,6 +23,6 @@ public class Message
 
     public override string ToString()
     {
-        return $"From: {from}, To: {to}, Message: {message}, See: {see}";
+        return message;
     }
 }

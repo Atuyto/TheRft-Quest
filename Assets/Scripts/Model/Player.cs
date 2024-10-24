@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,12 +11,6 @@ public class Player : MonoBehaviour
     {
         get
         {
-            if (instance == null)
-            {
-                GameObject go = new GameObject("Player");
-                instance = go.AddComponent<Player>();
-                DontDestroyOnLoad(go);
-            }
             return instance;
         }
     }
