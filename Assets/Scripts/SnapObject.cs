@@ -3,18 +3,26 @@ using System.Collections.Generic;
 
 public class SnapObject : MonoBehaviour
 {
-    public List<Transform> snapZones; 
-    public List<Transform> puzzlePieces; 
+    public List<Transform> snapZones;
+    public List<Transform> puzzlePieces;
     public Transform puzzleBase;
     public GameObject puzzleBaseDone;
     private bool isSnapped = false;
     private Transform currentSnapZone;
+    private static Dictionary<Transform, bool> snapZoneOccupied = new Dictionary<Transform, bool>();
+
+    void Start()
+    {
+        foreach (Transform snapZone in snapZones)
+        {
+            snapZoneOccupied[snapZone] = false;
+        }
+    }
 
     void Update()
     {
         if (isSnapped)
         {
-            // Si l'objet est déjà snappé le maintenir en place
             transform.position = currentSnapZone.position;
             transform.rotation = currentSnapZone.rotation;
         }
@@ -24,10 +32,10 @@ public class SnapObject : MonoBehaviour
     {
         if (other.CompareTag("SnapZone") && !isSnapped)
         {
-            // L'objet entre dans une zone de snap
             Transform closestSnapZone = GetClosestSnapZone(other.transform);
-            if (closestSnapZone != null)
+            if (closestSnapZone != null && !snapZoneOccupied[closestSnapZone])
             {
+                snapZoneOccupied[closestSnapZone] = true;
                 currentSnapZone = closestSnapZone;
                 isSnapped = true;
                 CheckPuzzleCompletion();
@@ -39,7 +47,7 @@ public class SnapObject : MonoBehaviour
     {
         if (other.CompareTag("SnapZone") && isSnapped && other.transform == currentSnapZone)
         {
-            // L'objet sort de la zone de snap
+            snapZoneOccupied[currentSnapZone] = false;
             isSnapped = false;
             currentSnapZone = null;
         }
@@ -80,14 +88,12 @@ public class SnapObject : MonoBehaviour
 
         if (allCorrect)
         {
-            // Si toutes les pièces sont à leur place faire disparaître le plateau
             DisappearPuzzle();
         }
     }
 
     void DisappearPuzzle()
     {
-        // Faire disparaître le plateau
         Debug.Log("Puzzle completed! Plateau disappeared.");
         puzzleBase.gameObject.SetActive(false);
         foreach (Transform piece in puzzlePieces)
