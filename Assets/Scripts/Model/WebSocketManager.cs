@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 public class WebSocketManager : MonoBehaviour
 {
     private WebSocket ws;
-    private string url = "ws://192.168.1.34:9001/ws?idpersonne=1";
+    private string url = "wss://lamb-master-vulture.ngrok-free.app/ws?idpersonne=1";
     private Player player;
 
     public static WebSocketManager Instance { get; private set; }
@@ -42,6 +42,7 @@ public class WebSocketManager : MonoBehaviour
     void InitializeWebSocket()
     {
         ws = new WebSocket(url);
+        ws.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
         ws.OnOpen += (sender, e) =>
         {
             Debug.Log("WebSocket connection opened.");
@@ -56,7 +57,18 @@ public class WebSocketManager : MonoBehaviour
                     {
                         // Désérialisation et interaction avec des objets Unity sur le thread principal
                         Message receivedMessage = JsonConvert.DeserializeObject<Message>(e.Data);
-                        Player.Instance.AddMessage(receivedMessage); // Cette ligne doit être sur le thread principal
+                        // try{
+                        //     SystemMessage systemMessage = JsonConvert.DeserializeObject<SystemMessage>(receivedMessage.message);
+                        //     Main.systemMessage.Add(systemMessage);
+                        //     Debug.Log("Message système - Titre : " + systemMessage.GetTitre() + ", Code : " + systemMessage.GetCode());
+                        // }
+                        // catch {
+                        //     Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
+                        //     Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
+                        // }
+                        Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
+                        Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
+                        
                     }
                     catch (JsonException ex)
                     {
@@ -76,7 +88,7 @@ public class WebSocketManager : MonoBehaviour
         };
         ws.OnClose += (sender, e) =>
         {
-            Debug.Log("WebSocket connection closed.");
+            Debug.Log("WebSocket connection closed. erreur : " + e.Code);
         };
         ws.Connect();
     }
