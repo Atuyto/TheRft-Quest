@@ -5,9 +5,9 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
 
-    public static int codeEnigme2 = 12501;
-    public static int  codeEnigme3 = 12502;
-    public static List<SystemMessage> systemMessage;
+    public static string codeEnigme2 = "12501";
+    public static string  codeEnigme3 = "12502";
+    public static ObservableList<SystemMessage> systemMessage;
     public static Main Instance { get; private set; }
 
     void Awake()
@@ -15,7 +15,7 @@ public class Main : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            systemMessage = new List<SystemMessage>();
+            systemMessage = new ObservableList<SystemMessage>();
             DontDestroyOnLoad(gameObject);
         }
         else

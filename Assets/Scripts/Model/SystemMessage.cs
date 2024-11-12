@@ -1,35 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class SystemMessage : MonoBehaviour
+[Serializable]
+public class SystemMessage
 {
-    private string titre;
-    private string code;
+    public string title;
+    public string code;
     
-    public void Initialize(string titre, string code)
+    public SystemMessage(string title, string code)
     {
-        this.titre = titre;
+        this.title = title;
         this.code = code;
     }
 
-    public string GetCode()
+    public SystemMessage()
+    {
+
+    }
+
+    public override string ToString()
     {
         return code;
-    }
-
-    public void SetCode(string code)
-    {
-        this.code = code;
-    }
-
-    public string GetTitre()
-    {
-        return titre;
-    }
-
-    public void SetTitre(string titre)
-    {
-        this.titre = titre;
     }
 }

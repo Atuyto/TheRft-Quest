@@ -57,18 +57,21 @@ public class WebSocketManager : MonoBehaviour
                     {
                         // Désérialisation et interaction avec des objets Unity sur le thread principal
                         Message receivedMessage = JsonConvert.DeserializeObject<Message>(e.Data);
-                        // try{
-                        //     SystemMessage systemMessage = JsonConvert.DeserializeObject<SystemMessage>(receivedMessage.message);
-                        //     Main.systemMessage.Add(systemMessage);
-                        //     Debug.Log("Message système - Titre : " + systemMessage.GetTitre() + ", Code : " + systemMessage.GetCode());
-                        // }
-                        // catch {
-                        //     Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
-                        //     Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
-                        // }
-                        Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
-                        Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
-                        
+                        //Debug.Log("Message Joueur 2 : " + receivedMessage.ToString());
+                        try
+                        {
+                            SystemMessage systemMessage = JsonConvert.DeserializeObject<SystemMessage>(receivedMessage.message);
+                            Main.systemMessage.Add(systemMessage);
+                            Debug.Log("Message système - Titre : " + systemMessage.ToString());
+                        }
+                        catch
+                        {
+                            Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
+                            Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
+                        }
+                        //Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
+                        //Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
+
                     }
                     catch (JsonException ex)
                     {
