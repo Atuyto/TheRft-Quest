@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 270922725
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0bb58c5b4b828bc0f919c4c013cc82bd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 99bc7d13a1c65dc030e38a0fbd498e8c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0bb58c5b4b828bc0f919c4c013cc82bd
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: c5af6ab9d1bd4a47970ad151090281f3, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.PoseDetection.FingerFeatureStateThreshold
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.PoseDetection.FingerFeatureThresholds
+Assets:
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/MiddleFingerFeatureStateThresholds.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/DefaultThumbFeatureStateThresholds.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/DefaultFingerFeatureStateThresholds.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/IndexFingerFeatureStateThresholds.asset
+Dependencies: []

@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 2991156867
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 86e70bf10ada6a0168d2135a02dad11a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 86e70bf10ada6a0168d2135a02dad11a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Puzzle/9.jpg
+- Assets/Puzzle/5.jpg
+- Assets/Puzzle/6.jpg
+- Assets/Puzzle/7.jpg
+- Assets/Puzzle/2.jpg
+- Assets/Puzzle/8.jpg
+- Assets/Puzzle/1.jpg
+- Assets/Puzzle/4.jpg
+- Assets/Puzzle/PuzzleDone.jpg
+- Assets/Puzzle/3.jpg
+Dependencies: []

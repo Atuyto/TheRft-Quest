@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3391966810
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 160dec208eb0a78ab10c8bcf25c71c48
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0df1dec30b5d061d422d3e6493d27647
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 160dec208eb0a78ab10c8bcf25c71c48
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/Interaction/Runtime/Shaders/OculusHand.shader
+Dependencies: []
