@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BrushTrigger : MonoBehaviour
 {
-    public Material redMaterial; 
-    public Material blueMaterial; 
+    public Material redMaterial;
+    public Material blueMaterial;
     public Material greenMaterial;
     public Material orangeMaterial;
     public Material yellowMaterial;
@@ -13,13 +14,16 @@ public class BrushTrigger : MonoBehaviour
     private Renderer targetRenderer;
     private Material originalMaterial;
 
+    public List<GameObject> canvasSections;   
+    public List<Material> expectedMaterials;  
+
     void Start()
     {
         targetRenderer = this.GetComponent<Renderer>();
-            if (targetRenderer != null)
-            {
+        if (targetRenderer != null)
+        {
             originalMaterial = targetRenderer.material;
-            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,8 +85,40 @@ public class BrushTrigger : MonoBehaviour
                 if (canvaRenderer != null)
                 {
                     canvaRenderer.material = targetRenderer.material;
+                    CheckIfAllZonesFilled();
                 }
             }
         }
     }
+
+    void CheckIfAllZonesFilled()
+    {
+        bool allFilledCorrectly = true;
+
+        for (int i = 0; i < canvasSections.Count; i++)
+        {
+            Renderer zoneRenderer = canvasSections[i].GetComponent<Renderer>();
+            if (zoneRenderer != null)
+            {
+                Material zoneMaterial = zoneRenderer.material;
+                Material expectedMaterial = expectedMaterials[i];
+
+                if (zoneMaterial.color != expectedMaterial.color)
+                {
+                    allFilledCorrectly = false;
+                    break; 
+                }
+            }
+        }
+
+        if (allFilledCorrectly)
+        {
+            Debug.Log("Toutes les zones sont remplies correctement !");
+        }
+        else
+        {
+            Debug.Log("Certaines zones ne sont pas remplies correctement.");
+        }
+    }
+
 }
