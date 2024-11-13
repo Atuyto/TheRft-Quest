@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
@@ -25,7 +26,7 @@ public class SnapObject : MonoBehaviour
     {
         if (isSnapped)
         {
-            // Si l'objet est d�j� snapp� le maintenir en place
+            // Si l'objet est déjà snapé, le maintenir en place
             transform.position = currentSnapZone.position;
             transform.rotation = currentSnapZone.rotation;
         }
@@ -85,32 +86,43 @@ public class SnapObject : MonoBehaviour
             if (pieceScript.currentSnapZone != snapZones[i])
             {
                 allCorrect = false;
-                Debug.Log($"Piece {i} is not in the correct snap zone.");
+                Debug.Log($"Pièce {i} n'est pas dans la zone de snap correcte.");
                 break;
             }
         }
 
         if (allCorrect)
         {
-            // Si toutes les pi�ces sont � leur place faire dispara�tre le plateau
+            // Si toutes les pièces sont à leur place, faire disparaître le plateau
             //DisappearPuzzle();
             WebSocketManager webSocketManager = FindObjectOfType<WebSocketManager>();
             SystemMessage systemMessage = new SystemMessage("Oculus", "12501");
             Message message = new Message(JsonConvert.SerializeObject(systemMessage), "1", "2");
             webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
-            SceneManager.LoadScene("SceneFree");
+    
+            // Lance la coroutine pour attendre avant de charger la scène
+            StartCoroutine(WaitAndLoadScene(2f, "SceneFree"));
         }
     }
 
     void DisappearPuzzle()
     {
-        // Faire dispara�tre le plateau
-        Debug.Log("Puzzle completed! Plateau disappeared.");
+        // Faire disparaître le plateau
+        Debug.Log("Puzzle terminé ! Le plateau a disparu.");
         puzzleBase.gameObject.SetActive(false);
         foreach (Transform piece in puzzlePieces)
         {
             piece.gameObject.SetActive(false);
         }
         puzzleBaseDone.gameObject.SetActive(true);
+    }
+
+    // Nouvelle coroutine pour attendre avant de charger la scène
+    private IEnumerator WaitAndLoadScene(float delay, string sceneName)
+    {
+        
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+
     }
 }

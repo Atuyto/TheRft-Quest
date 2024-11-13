@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneFree.unity
     guid: c6b4cd83583bcd747b47f8d4390cc691
+  - enabled: 1
+    path: Assets/Scenes/Enigma3.unity
+    guid: 2d6f060a18d3c3042ac8105d54742aef
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d8b372edce7914c429ad50ade0d5c927, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0895c0da027dffd44be7d00c20b69432, type: 2}

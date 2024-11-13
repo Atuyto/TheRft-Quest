@@ -71,7 +71,8 @@ public class LightTrigger : MonoBehaviour
                     SystemMessage systemMessage = new SystemMessage("Oculus", "12502");
                     Message message = new Message(JsonConvert.SerializeObject(systemMessage), "1", "2");
                     webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
-                    SceneManager.LoadScene("SceneFree");
+                    StartCoroutine(WaitAndLoadScene(2f, "SceneFree"));
+                    // SceneManager.LoadScene("SceneFree");
                 }
                 else
                 {
@@ -144,5 +145,12 @@ public class LightTrigger : MonoBehaviour
         {
             lightTrigger.renderer.material = winMaterial;
         }
+    }
+
+    // Nouvelle coroutine pour attendre avant de charger la scène
+    private IEnumerator WaitAndLoadScene(float delay, string sceneName)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 }
