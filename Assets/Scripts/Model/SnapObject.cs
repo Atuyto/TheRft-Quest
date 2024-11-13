@@ -5,12 +5,21 @@ using Newtonsoft.Json;
 
 public class SnapObject : MonoBehaviour
 {
-    public List<Transform> snapZones; 
-    public List<Transform> puzzlePieces; 
+    public List<Transform> snapZones;
+    public List<Transform> puzzlePieces;
     public Transform puzzleBase;
     public GameObject puzzleBaseDone;
     private bool isSnapped = false;
     private Transform currentSnapZone;
+    private static Dictionary<Transform, bool> snapZoneOccupied = new Dictionary<Transform, bool>();
+
+    void Start()
+    {
+        foreach (Transform snapZone in snapZones)
+        {
+            snapZoneOccupied[snapZone] = false;
+        }
+    }
 
     void Update()
     {
@@ -26,10 +35,10 @@ public class SnapObject : MonoBehaviour
     {
         if (other.CompareTag("SnapZone") && !isSnapped)
         {
-            // L'objet entre dans une zone de snap
             Transform closestSnapZone = GetClosestSnapZone(other.transform);
-            if (closestSnapZone != null)
+            if (closestSnapZone != null && !snapZoneOccupied[closestSnapZone])
             {
+                snapZoneOccupied[closestSnapZone] = true;
                 currentSnapZone = closestSnapZone;
                 isSnapped = true;
                 CheckPuzzleCompletion();

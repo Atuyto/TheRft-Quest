@@ -9,6 +9,9 @@ public class LightTrigger : MonoBehaviour
     public Material originalMaterial;
     public Material loseMaterial;
     public Material winMaterial;
+    public AudioSource audio;
+    public AudioSource right;
+    public AudioSource wrong;
     private Renderer renderer;
     private bool isCoroutineRunning = false;
     private bool won = false;
@@ -39,7 +42,7 @@ public class LightTrigger : MonoBehaviour
     {
         if (!isCoroutineRunning && !won && !isInTrigger)
         {
-            isInTrigger = true;  
+            isInTrigger = true;
 
             if (light != null && newMaterial != null)
             {
@@ -50,6 +53,7 @@ public class LightTrigger : MonoBehaviour
                 if (!CheckSequence())
                 {
                     Debug.Log("Séquence incorrecte ! Vous avez perdu.");
+                    wrong.Play();
                     StartCoroutine(ChangeAllLightsToRed());
                     playerSequence.Clear();
                 }
@@ -57,8 +61,13 @@ public class LightTrigger : MonoBehaviour
                 {
                     Debug.Log("Séquence correcte !");
                     won = true;
+                    right.Play();
                     ChangeAllLightsToGreen();
                     playerSequence.Clear();
+                }
+                else
+                {
+                    audio.Play();
                 }
 
                 StartCoroutine(ResetTriggerDelay());
@@ -89,7 +98,7 @@ public class LightTrigger : MonoBehaviour
         return true;
     }
 
-    // Coroutine pour changer toutes les lumières en rouge pendant 1 seconde
+    // Coroutine pour changer toutes les lumières en rouge
     private IEnumerator ChangeAllLightsToRed()
     {
         isCoroutineRunning = true;
@@ -117,9 +126,8 @@ public class LightTrigger : MonoBehaviour
     // Coroutine pour réinitialiser le trigger après un délai
     private IEnumerator ResetTriggerDelay()
     {
-        // Attendre 1 seconde (ou la durée de ton choix)
         yield return new WaitForSeconds(1f);
-        isInTrigger = false; // Réinitialiser l'état du trigger
+        isInTrigger = false; 
     }
 
     private void ChangeAllLightsToGreen()
