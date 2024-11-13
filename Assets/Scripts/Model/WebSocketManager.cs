@@ -12,7 +12,7 @@ public class WebSocketManager : MonoBehaviour
     private WebSocket ws;
     private string url = "wss://lamb-master-vulture.ngrok-free.app/ws?idpersonne=1";
     private Player player;
-
+    private Coroutine pingCoroutine;
     public static WebSocketManager Instance { get; private set; }
 
     void Awake()
@@ -46,6 +46,10 @@ public class WebSocketManager : MonoBehaviour
         ws.OnOpen += (sender, e) =>
         {
             Debug.Log("WebSocket connection opened.");
+            if (pingCoroutine == null)
+            {
+                pingCoroutine = StartCoroutine(PingCoroutine());
+            }
         };
         ws.OnMessage += (sender, e) =>
         {
@@ -57,6 +61,10 @@ public class WebSocketManager : MonoBehaviour
                     {
                         // Désérialisation et interaction avec des objets Unity sur le thread principal
                         Message receivedMessage = JsonConvert.DeserializeObject<Message>(e.Data);
+                        if (receivedMessage.from == "0" || receivedMessage.to == "0")
+                        {
+                            return;
+                        }
                         //Debug.Log("Message Joueur 2 : " + receivedMessage.ToString());
                         try
                         {
@@ -96,11 +104,35 @@ public class WebSocketManager : MonoBehaviour
         ws.Connect();
     }
 
+    private IEnumerator PingCoroutine()
+    {
+        while (ws != null && ws.IsAlive)
+        {
+            yield return new WaitForSeconds(30); // Attend 30 secondes entre chaque ping
+
+            if (ws != null && ws.IsAlive)
+            {
+                Message message = new Message("Ping", "0", "0");
+                ws.Send(JsonConvert.SerializeObject(message)); // Envoie un ping ou un message keep-alive
+                Debug.Log("Ping envoyé");
+            }
+            else
+            {
+                Debug.LogWarning("Impossible d'envoyer le ping, la connexion WebSocket est fermée.");
+            }
+        }
+    }
+
     void OnApplicationQuit()
     {
         if (ws != null && ws.IsAlive)
         {
             ws.Close();
+        }
+
+        if (pingCoroutine != null)
+        {
+            StopCoroutine(pingCoroutine);
         }
     }
 
