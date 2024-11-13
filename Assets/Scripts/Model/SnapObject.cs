@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class SnapObject : MonoBehaviour
 {
@@ -83,6 +84,10 @@ public class SnapObject : MonoBehaviour
         {
             // Si toutes les pi�ces sont � leur place faire dispara�tre le plateau
             //DisappearPuzzle();
+            WebSocketManager webSocketManager = FindObjectOfType<WebSocketManager>();
+            SystemMessage systemMessage = new SystemMessage("Oculus", "12501");
+            Message message = new Message(JsonConvert.SerializeObject(systemMessage), "1", "2");
+            webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
             SceneManager.LoadScene("SceneFree");
         }
     }

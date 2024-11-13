@@ -104,12 +104,12 @@ public class WebSocketManager : MonoBehaviour
         }
     }
 
-    public void SendMessage(Message message)
+    public void SendMessage(string message)
     {
         if (ws != null && ws.IsAlive)
         {
-            string jsonMessage = JsonConvert.SerializeObject(message);
-            ws.Send(jsonMessage);
+        
+            ws.Send(message);
         }
         else
         {

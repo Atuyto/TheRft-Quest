@@ -19,6 +19,9 @@ public class OnMessageRecieved : MonoBehaviour
     private void onMessageRecieved(List<SystemMessage> systemMessages)
     {
         SystemMessage lastMessagesRecieved = systemMessages[systemMessages.Count - 1];
+        if (lastMessagesRecieved.title == "Oculus"){
+            return;
+        }
         switch (lastMessagesRecieved.code)
         {
             case "12501": // CODE Enigme 2
