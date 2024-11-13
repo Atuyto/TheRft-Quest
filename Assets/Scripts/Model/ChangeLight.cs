@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class LightTrigger : MonoBehaviour
 {
@@ -52,18 +54,24 @@ public class LightTrigger : MonoBehaviour
 
                 if (!CheckSequence())
                 {
-                    Debug.Log("Séquence incorrecte ! Vous avez perdu.");
+                    Debug.Log("Sï¿½quence incorrecte ! Vous avez perdu.");
                     wrong.Play();
                     StartCoroutine(ChangeAllLightsToRed());
                     playerSequence.Clear();
                 }
                 else if (playerSequence.Count == correctSequence.Count)
                 {
-                    Debug.Log("Séquence correcte !");
+                    Debug.Log("Sï¿½quence correcte !");
                     won = true;
                     right.Play();
                     ChangeAllLightsToGreen();
                     playerSequence.Clear();
+
+                    WebSocketManager webSocketManager = FindObjectOfType<WebSocketManager>();
+                    SystemMessage systemMessage = new SystemMessage("Oculus", "12502");
+                    Message message = new Message(JsonConvert.SerializeObject(systemMessage), "1", "2");
+                    webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
+                    SceneManager.LoadScene("SceneFree");
                 }
                 else
                 {
@@ -98,7 +106,7 @@ public class LightTrigger : MonoBehaviour
         return true;
     }
 
-    // Coroutine pour changer toutes les lumières en rouge
+    // Coroutine pour changer toutes les lumiï¿½res en rouge
     private IEnumerator ChangeAllLightsToRed()
     {
         isCoroutineRunning = true;
@@ -123,7 +131,7 @@ public class LightTrigger : MonoBehaviour
         isCoroutineRunning = false;
     }
 
-    // Coroutine pour réinitialiser le trigger après un délai
+    // Coroutine pour rï¿½initialiser le trigger aprï¿½s un dï¿½lai
     private IEnumerator ResetTriggerDelay()
     {
         yield return new WaitForSeconds(1f);

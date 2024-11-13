@@ -28,7 +28,7 @@ public class OnMessageRecieved : MonoBehaviour
                 SceneManager.LoadScene("Enigma2");
                 break;
             case "12502": // CODE Enigme 3
-                SceneManager.LoadScene("SceneFree");
+                SceneManager.LoadScene("Enigma3");
                 break;
             default:
                 //TODO

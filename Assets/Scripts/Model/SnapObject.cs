@@ -51,6 +51,7 @@ public class SnapObject : MonoBehaviour
         if (other.CompareTag("SnapZone") && isSnapped && other.transform == currentSnapZone)
         {
             // L'objet sort de la zone de snap
+            snapZoneOccupied[currentSnapZone] = false;
             isSnapped = false;
             currentSnapZone = null;
         }
