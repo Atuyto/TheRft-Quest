@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class OnMessageRecieved : MonoBehaviour
 {
+    public SystemMessage lastMessagesRecieved;
+    public GameObject readyText;
+
     void Start()
     {
         
@@ -18,11 +22,12 @@ public class OnMessageRecieved : MonoBehaviour
 
     private void onMessageRecieved(List<SystemMessage> systemMessages)
     {
-        SystemMessage lastMessagesRecieved = systemMessages[systemMessages.Count - 1];
+        lastMessagesRecieved = systemMessages[systemMessages.Count - 1];
         if (lastMessagesRecieved.title == "Oculus"){
             return;
         }
-        switch (lastMessagesRecieved.code)
+        readyText.gameObject.SetActive(true);
+        /*switch (lastMessagesRecieved.code)
         {
             case "12501": // CODE Enigme 2
                 SceneManager.LoadScene("Enigma2");
@@ -33,6 +38,6 @@ public class OnMessageRecieved : MonoBehaviour
             default:
                 //TODO
                 break;
-        }
+        }*/
     }
 }
