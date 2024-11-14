@@ -2615,6 +2615,8 @@ MonoBehaviour:
   yellowMaterial: {fileID: 2100000, guid: 545fac72c03feac41ab329f04cd051d2, type: 2}
   purpleMaterial: {fileID: 2100000, guid: f7c7283ffdbf34c48af661865b2fac6b, type: 2}
   pinkMaterial: {fileID: 2100000, guid: 895500db3a5c32640a9cc0be70844974, type: 2}
+  canvasSections: []
+  expectedMaterials: []
 --- !u!1 &1097966496
 GameObject:
   m_ObjectHideFlags: 0
