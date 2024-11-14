@@ -10,6 +10,7 @@ public class BrushTrigger : MonoBehaviour
     public Material yellowMaterial;
     public Material purpleMaterial;
     public Material pinkMaterial;
+    public AudioSource splash;
 
     private Renderer targetRenderer;
     private Material originalMaterial;
@@ -84,6 +85,7 @@ public class BrushTrigger : MonoBehaviour
                 Renderer canvaRenderer = other.GetComponent<Renderer>();
                 if (canvaRenderer != null)
                 {
+                    splash.Play();
                     canvaRenderer.material = targetRenderer.material;
                     CheckIfAllZonesFilled();
                 }
