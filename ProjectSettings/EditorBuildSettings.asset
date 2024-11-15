@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Enigma2.unity
     guid: 4455f71030e090642a908a4eb3b7dffd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SceneFree.unity
     guid: c6b4cd83583bcd747b47f8d4390cc691
   - enabled: 0
