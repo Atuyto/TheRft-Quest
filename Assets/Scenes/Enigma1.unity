@@ -225,7 +225,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &70317526
 MonoBehaviour:
@@ -497,7 +497,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &98629543
 MonoBehaviour:
@@ -4365,7 +4365,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &1021354586
 MonoBehaviour:
@@ -5029,6 +5029,7 @@ GameObject:
   - component: {fileID: 1131846881}
   - component: {fileID: 1131846880}
   - component: {fileID: 1131846879}
+  - component: {fileID: 1131846888}
   m_Layer: 0
   m_Name: BaseDone
   m_TagString: Plateau
@@ -5249,6 +5250,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131846877}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1131846888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131846877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b02dc5703d6c042bdbc01aae12334f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraRig: {fileID: 499217676}
+  positionOffset: {x: 0, y: -1, z: 1}
+  rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1222759240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5587,7 +5603,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &1284406404
 MonoBehaviour:
@@ -5859,7 +5875,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &1358027114
 MonoBehaviour:
@@ -6131,7 +6147,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &1539923085
 MonoBehaviour:
@@ -7026,6 +7042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1664639235}
+  - component: {fileID: 1664639236}
   m_Layer: 0
   m_Name: Puzzle
   m_TagString: Untagged
@@ -7033,14 +7050,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1664639235
-Transform:
+--- !u!224 &1664639235
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664639234}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -7050,6 +7066,26 @@ Transform:
   - {fileID: 1977493720}
   m_Father: {fileID: 1849890435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1664639236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664639234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b02dc5703d6c042bdbc01aae12334f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraRig: {fileID: 499217676}
+  positionOffset: {x: 0, y: 1, z: 0.6}
+  rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1729268836
 GameObject:
   m_ObjectHideFlags: 0
@@ -7906,7 +7942,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &1864686201
 MonoBehaviour:
@@ -9010,7 +9046,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &2105870400
 MonoBehaviour:
@@ -9282,7 +9318,7 @@ MonoBehaviour:
   - {fileID: 1284406402}
   - {fileID: 1539923083}
   - {fileID: 70317524}
-  puzzleBase: {fileID: 1664639235}
+  puzzleBase: {fileID: 0}
   puzzleBaseDone: {fileID: 1131846877}
 --- !u!114 &2115560502
 MonoBehaviour:

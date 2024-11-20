@@ -71,7 +71,7 @@ public class LightTrigger : MonoBehaviour
                     SystemMessage systemMessage = new SystemMessage("Oculus", "12502");
                     Message message = new Message(JsonConvert.SerializeObject(systemMessage), "1", "2");
                     webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
-                    StartCoroutine(WaitAndLoadScene(2f, "SceneFree"));
+                    StartCoroutine(WaitAndLoadScene(2f, "FreeScene"));
                     // SceneManager.LoadScene("SceneFree");
                 }
                 else
