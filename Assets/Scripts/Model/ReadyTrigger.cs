@@ -15,7 +15,8 @@ public class ReadyTrigger : MonoBehaviour
     {   
         if (readyText != null)
         {
-            readyText.gameObject.SetActive(false);
+            //readyText.gameObject.SetActive(false);
+            readyText.gameObject.SetActive(true);
         }
     }
 
@@ -27,9 +28,10 @@ public class ReadyTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("trigger");
         OnMessageRecieved onMessage = FindObjectOfType<OnMessageRecieved>();
         SystemMessage lastMessagesRecieved = onMessage.lastMessagesRecieved;
-        switch (lastMessagesRecieved.code)
+        /*switch (lastMessagesRecieved.code)
         {
             case "12501": // CODE Enigme 2
                 SceneManager.LoadScene("Enigma2");
@@ -40,8 +42,12 @@ public class ReadyTrigger : MonoBehaviour
             default:
                 //TODO
                 break;
+        }*/
+
+        if (other.CompareTag("Hand"))
+        {
+            SceneManager.LoadScene("Enigma2");
         }
-        
     }
 
 }

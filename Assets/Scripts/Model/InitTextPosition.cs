@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitTextPosition : MonoBehaviour
 {
@@ -39,5 +40,27 @@ public class InitTextPosition : MonoBehaviour
         Vector3 directionToCamera = mainCamera.transform.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(directionToCamera);
         //transform.Rotate(0, 180, 0); // Inverse pour être face à la caméra
+    }
+
+    // Nouvelle coroutine pour attendre avant de charger la scène
+    private IEnumerator WaitAndLoadScene(float delay, string sceneName)
+    {
+
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+
+    }
+    void Update()
+    {
+        // Vérifie si l'audio a fini de jouer.
+        if (!audio.isPlaying)
+        {
+            OnAudioEnd();
+        }
+    }
+
+    void OnAudioEnd()
+    {
+        StartCoroutine(WaitAndLoadScene(2f, "Pilote"));
     }
 }
