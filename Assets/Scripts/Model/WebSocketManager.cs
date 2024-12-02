@@ -10,7 +10,8 @@ using Newtonsoft.Json;
 public class WebSocketManager : MonoBehaviour
 {
     private WebSocket ws;
-    private string url = "wss://lamb-master-vulture.ngrok-free.app/ws?idpersonne=1";
+    //private string url = "wss://lamb-master-vulture.ngrok-free.app/ws?idpersonne=1";
+    private string url = "w&s://10.6.5.93:9001/ws?idpersonne=1";
     private Player player;
     private Coroutine pingCoroutine;
     public static WebSocketManager Instance { get; private set; }

@@ -101,7 +101,7 @@ public class SnapObject : MonoBehaviour
             webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
     
             // Lance la coroutine pour attendre avant de charger la scène
-            StartCoroutine(WaitAndLoadScene(2f, "SceneFree"));
+            StartCoroutine(WaitAndLoadScene(2f, "FreeScene"));
         }
     }
 
