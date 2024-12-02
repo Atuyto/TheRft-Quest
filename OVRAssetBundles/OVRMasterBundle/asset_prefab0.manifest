@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1260359296
+CRC: 823344515
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f8c4f7eb6bc7971a5dfa32fb45028d7c
+    Hash: 36b024f8e6d920a68d9b300be3566866
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d2d1c02d3847e44e025367afcf0edfb4
+    Hash: 3310d8247f0e14276ab240bd3745ac21
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: f8c4f7eb6bc7971a5dfa32fb45028d7c
+    Hash: 36b024f8e6d920a68d9b300be3566866
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,6 +21,8 @@ ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 23
+  Script: {instanceID: 0}
+- Class: 28
   Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
@@ -39,7 +41,13 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 3d0aa60e7f7a22a4f87b0168e1405819, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: e23703fce1b4cdf488665b5210c1a626, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 63ba909b5d2d41e49920b015a2269a9d, type: 3}
 - Class: 114
@@ -54,6 +62,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 54c16b381e28e8d479237771d234dbae, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 86bd0d3098d25db4c9c839739557480b, type: 3}
 - Class: 114
@@ -87,15 +97,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: cb028ce99f9700e4197a49bfdcd525dd, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 3d0aa60e7f7a22a4f87b0168e1405819, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: e06fe30fd4efa954b8f53ccc8da8f46b, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 5d19abdb92a9e7d46862b61d72c76b91, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6f0318fdd1adcad4d84ff26f80f0c75a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 9067480af55f5874d8f613b16812f968, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bebfb74b97b000d4899abbd61f49aa40, type: 3}
 - Class: 114
@@ -110,6 +124,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 438e12c9002f2c8489c81a2d3472b18d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
 - Class: 114
@@ -133,6 +149,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 4ae60cfa43388e449a7518f36418f81c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 81e3d4005d3a14c49821e0e771053bd4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 998a5646185efb9488265f3a2f35a99a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d5e48d93b64a9ae4f9fd5a728c8f51af, type: 3}
@@ -146,29 +166,81 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: SystemMessage
 - AssemblyName: Oculus.Interaction
   ClassName: Oculus.Interaction.MaterialPropertyVector
 - AssemblyName: Oculus.Interaction
   ClassName: Oculus.Interaction.PoseDetection.FingerFeatureStateProvider/FingerStateThresholds
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphPairAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphValueRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent`1[System.Int32]
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
 - Assets/Oculus/Interaction/Runtime/Prefabs/HandGrab/HandGrabInteractor.prefab
+- Assets/Scripts/Menu.prefab
 - Assets/Oculus/Interaction/Runtime/Prefabs/Grab/ControllerGrabInteractor.prefab
-- Assets/Scripts/initGame.prefab
 - Assets/Oculus/Interaction/Samples/Prefabs/OVRIntegration/Legacy/OculusInteractionSampleRig.prefab
 - Assets/Oculus/VR/Prefabs/OVRHandPrefab.prefab
-- Assets/Scripts/Model/MainThread.prefab
+- Assets/Scripts/Model/GameObject/MainThread.prefab
 - Assets/Oculus/Interaction/OVRIntegration/Runtime/Prefabs/Hands/OVRRightHandVisual.prefab
 - Assets/Oculus/Interaction/Runtime/Prefabs/Poke/HandPokeInteractor.prefab
-- Assets/Scripts/Model/gOPlayer.prefab
-- Assets/Scripts/Model/gOWebSocket.prefab
+- Assets/Scripts/Model/GameObject/gOPlayer.prefab
+- Assets/Scripts/Model/GameObject/gOWebSocket.prefab
+- Assets/Scripts/Model/GameObject/initGame.prefab
 - Assets/Oculus/Interaction/OVRIntegration/Runtime/Prefabs/Hands/OVRLeftHandVisual.prefab
 - Assets/Oculus/Interaction/Runtime/Prefabs/Poke/ControllerPokeInteractor.prefab
 - Assets/Oculus/VR/Prefabs/OVRCameraRig.prefab
+- Assets/Radial Part.prefab
 - Assets/Oculus/VR/Prefabs/OVRControllerPrefab.prefab
+- Assets/Scripts/Model/GameObject/Main.prefab
 - Assets/Oculus/VR/Editor/BuildingBlocks/BlockData/CameraRig/Prefabs/OVRCameraRig.prefab
+- Assets/Scripts/Model/GameObject/OnSystemMessage.prefab
 Dependencies:
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_asset0
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_controller0
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_fbx0
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_asset0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_controller0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_resources

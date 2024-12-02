@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2791873727
+CRC: 1369997258
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0bd678c04ab0315d44006c776720c579
+    Hash: 196fc503e900577e949ef4085dacda3e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7db772e4d4ea0de069ad05f068d2397a
+    Hash: 3e78b1c67ee368eeba1a9310297fb582
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 0bd678c04ab0315d44006c776720c579
+    Hash: 196fc503e900577e949ef4085dacda3e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -32,26 +32,7 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
-- Class: 108
-  Script: {instanceID: 0}
-- Class: 137
-  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/VR/Meshes/MetaQuestTouchPlus/MetaQuestTouchPlus_Left.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx
-- Assets/Puzzle/772_autosave.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx
-- Assets/Oculus/VR/Meshes/MetaQuestTouchPro/MetaQuestTouchPro_Right.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
-- Assets/Puzzle/piece.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
-- Assets/Oculus/VR/Meshes/HandTracking/OculusHand_R.fbx
-- Assets/Oculus/VR/Meshes/HandTracking/OculusHand_L.fbx
-- Assets/Puzzle/772_autosave (1).fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForRift/left_touch_controller_model_skel.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForRift/right_touch_controller_model_skel.fbx
-- Assets/Oculus/VR/Meshes/MetaQuestTouchPlus/MetaQuestTouchPlus_Right.fbx
-- Assets/Oculus/VR/Meshes/MetaQuestTouchPro/MetaQuestTouchPro_Left.fbx
-Dependencies:
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Models/TrainPalette.FBX
+Dependencies: []

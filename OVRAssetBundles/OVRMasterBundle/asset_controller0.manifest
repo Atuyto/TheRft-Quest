@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 851018212
+CRC: 707887733
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ddca1810515f84ff7d1baefd4858d98b
+    Hash: 6e369fd581dd1f349bf59ad0d0a99fb0
   TypeTreeHash:
     serializedVersion: 2
     Hash: 147058da82bee871bbce28e472030442
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: ddca1810515f84ff7d1baefd4858d98b
+    Hash: 6e369fd581dd1f349bf59ad0d0a99fb0
 HashAppended: 0
 ClassTypes:
 - Class: 74
@@ -29,4 +29,4 @@ Assets:
 - Assets/Oculus/VR/Meshes/MetaQuestTouchPlus/Animation/MetaQuestTouchPlusRightAnimation.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/Animation/OculusTouchRiftLeftAnimation.controller
 Dependencies:
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_fbx0

@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 13108273
+CRC: 853200908
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f4922dc83b3e22ca3bf91e906afe9020
+    Hash: efe66fe83b8a3f6e5f12d18ca34ac86c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b95cff57a520da5e13bc1e7fbd362f85
+    Hash: 9d0c757a7b88de13a3bfa1bbc2979511
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: f4922dc83b3e22ca3bf91e906afe9020
+    Hash: efe66fe83b8a3f6e5f12d18ca34ac86c
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -25,17 +25,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: ad074644ff568a14187a3690cfbd7534, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 690929a59dc7a42da9030305190d391f, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: ab2114bdc8544297b417dfefe9f1e410, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 191492db6e452eb468b95433ec162164, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3863570e7e6387a40ae4f323d83291e5, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 191492db6e452eb468b95433ec162164, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 690929a59dc7a42da9030305190d391f, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -117,4 +117,6 @@ Assets:
 - Assets/Oculus/VR/Resources/Texture2D Blit.shader
 - Assets/Oculus/Voice/Lib/Wit.ai/Resources/witai.png
 - Assets/Oculus/VR/Resources/Unlit Transparent Color.shader
-Dependencies: []
+Dependencies:
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_shader0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_ttf0

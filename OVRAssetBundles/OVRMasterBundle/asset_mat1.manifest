@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1327616745
+CRC: 3276117363
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 23cfde19d64a95f030674e6fc0d83000
+    Hash: 76a3e98c619b18ca73be695fc0872940
   TypeTreeHash:
     serializedVersion: 2
     Hash: b30fce1a9ad74efb72be6c308c56e365
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 23cfde19d64a95f030674e6fc0d83000
+    Hash: 76a3e98c619b18ca73be695fc0872940
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -25,5 +25,5 @@ Assets:
 - Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Materials/Clear.mat
 - Assets/Puzzle/Materials/Symbole16.mat
 Dependencies:
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_jpg0
-- C:/Users/Alexandre/Desktop/ProjetPerso/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_jpg0
+- C:/Users/emeli/Documents/BUT/BUT3/SAE/TheRft-Quest/OVRAssetBundles/OVRMasterBundle/asset_png0
