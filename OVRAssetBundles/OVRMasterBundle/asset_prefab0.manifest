@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 823344515
+CRC: 2809974293
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 36b024f8e6d920a68d9b300be3566866
+    Hash: ca1138edd6aa87c3c2d5de37c2f849dc
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3310d8247f0e14276ab240bd3745ac21
+    Hash: c18915f88a9f2a69f45691826d6b0886
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 36b024f8e6d920a68d9b300be3566866
+    Hash: ca1138edd6aa87c3c2d5de37c2f849dc
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,10 +40,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
-- Class: 114
-  Script: {fileID: 11500000, guid: 3d0aa60e7f7a22a4f87b0168e1405819, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: e23703fce1b4cdf488665b5210c1a626, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
 - Class: 114
@@ -87,6 +83,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2606bf2f0c914a7aba4390f29ba2eb6e, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: e23703fce1b4cdf488665b5210c1a626, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: ee6b94f7bc105c24ea3746dc4141a7eb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3e2cb428b733e56478338c736189a0d5, type: 3}
@@ -96,6 +94,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: f273abee0604ad2409c9bbc9a60e461e, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: cb028ce99f9700e4197a49bfdcd525dd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3d0aa60e7f7a22a4f87b0168e1405819, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e06fe30fd4efa954b8f53ccc8da8f46b, type: 3}
 - Class: 114
@@ -134,6 +134,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: b14164f8f23faae4293baeb84485b3d6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: acb743c666c1ab34e928a0b62c2fa862, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 09cced76cc649e444abf5f01db84a585, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2ff26c21ac005534e8af75f8427be9d1, type: 3}
 - Class: 114
@@ -183,6 +185,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: Oculus.Interaction.MaterialPropertyVector
 - AssemblyName: Oculus.Interaction
   ClassName: Oculus.Interaction.PoseDetection.FingerFeatureStateProvider/FingerStateThresholds
+- AssemblyName: Oculus.VR
+  ClassName: OVRVirtualKeyboard/CommitTextUnityEvent
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro
@@ -206,6 +210,8 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.UnityEvent`1[System.Int32]
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.FaceInfo
@@ -223,6 +229,7 @@ Assets:
 - Assets/Oculus/Interaction/Runtime/Prefabs/Grab/ControllerGrabInteractor.prefab
 - Assets/Oculus/Interaction/Samples/Prefabs/OVRIntegration/Legacy/OculusInteractionSampleRig.prefab
 - Assets/Oculus/VR/Prefabs/OVRHandPrefab.prefab
+- Assets/Oculus/VR/Prefabs/OVRVirtualKeyboard.prefab
 - Assets/Scripts/Model/GameObject/MainThread.prefab
 - Assets/Oculus/Interaction/OVRIntegration/Runtime/Prefabs/Hands/OVRRightHandVisual.prefab
 - Assets/Oculus/Interaction/Runtime/Prefabs/Poke/HandPokeInteractor.prefab
