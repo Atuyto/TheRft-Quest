@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     private static Player instance;
     private string name;
-    private List<Message> messages;
+    public ObservableList<Message> messages;
 
     public static Player Instance
     {
@@ -21,21 +21,11 @@ public class Player : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            messages = new List<Message>();
+            messages = new ObservableList<Message>();
         }
         else if (instance != this)
         {
             Destroy(gameObject);
         }
-    }
-
-    public List<Message> GetMessages()
-    {
-        return messages;
-    }
-
-    public void AddMessage(Message message)
-    {
-        messages.Add(message);
     }
 }
