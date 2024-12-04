@@ -5,13 +5,14 @@ using UnityEngine;
 using WebSocketSharp;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
+using Unity.VisualScripting;
 
 
 public class WebSocketManager : MonoBehaviour
 {
     private WebSocket ws;
-    //private string url = "wss://lamb-master-vulture.ngrok-free.app/ws?idpersonne=1";
-    private string url = "w&s://10.6.5.93:9001/ws?idpersonne=1";
+    private string url = "wss://lamb-master-vulture.ngrok-free.app/ws?idpersonne=1";
+    //private string url = "w&s://10.6.5.93:9001/ws?idpersonne=1";
     private Player player;
     private Coroutine pingCoroutine;
     public static WebSocketManager Instance { get; private set; }
@@ -75,7 +76,8 @@ public class WebSocketManager : MonoBehaviour
                         }
                         catch
                         {
-                            Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal
+                            Player player = FindObjectOfType<Player>();
+                            player.messages.Add(receivedMessage);  // Cette ligne doit être sur le thread principal
                             Debug.Log("Message Joueur 2 - Titre : " + receivedMessage.ToString());
                         }
                         //Player.Instance.AddMessage(receivedMessage);  // Cette ligne doit être sur le thread principal

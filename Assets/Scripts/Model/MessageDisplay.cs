@@ -1,41 +1,54 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class MessageDisplay : MonoBehaviour
 {
-    public TMP_Text messageText;
-    private Player player;
+    public TextMeshPro messageText;
+    public int maxMessages = 10;
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
-        StartCoroutine(UpdateMessages());
+        Player player = Player.Instance;
+        player.messages.OnListChanged += OnNewMessage;
     }
 
-    IEnumerator UpdateMessages()
+    // Lorsque la liste des messages change
+    public void OnNewMessage(List<Message> messages)
     {
-        while (true)
+        // Ajouter les nouveaux messages à la fin sans effacer les anciens
+        int startIndex = Mathf.Max(0, messages.Count - maxMessages); // Assurer qu'on n'affiche pas trop de messages
+        messageText.text = "";  // On efface le texte au début
+
+        for (int i = startIndex; i < messages.Count; i++)
         {
-            yield return new WaitForSeconds(1); // Mettre à jour toutes les secondes
-            List<Message> messages = player.GetMessages();
-
-            if (messages != null && messages.Count > 0)
-            {
-                // Efface le texte précédent
-                messageText.text = "";
-
-                // Parcourir tous les messages et les ajouter à messageText
-                foreach (Message message in messages)
-                {
-                    messageText.text += message.ToString() + "\n"; 
-                }
-            }
-           
+            DisplayMessage(messages[i]);  // Afficher chaque message
         }
     }
-}
-    
 
+    // Lorsque le script est détruit, on désinscrit la callback
+    public void OnDestroy()
+    {
+        Player player = Player.Instance;
+        player.messages.OnListChanged -= OnNewMessage;
+    }
+
+    // Fonction pour afficher un message spécifique
+    private void DisplayMessage(Message message)
+    {
+        string messageToDisplay = "";
+
+        // Si l'expéditeur est celui de l'utilisateur
+        if (message.from == "1")
+        {
+            messageToDisplay = "<align=right>" + message.message + "</align>\n";  // Aligner à droite
+        }
+        else
+        {
+            messageToDisplay = "<align=left>" + message.message + "</align>\n";  // Aligner à gauche
+        }
+
+        // Ajouter le message au texte total
+        messageText.text += messageToDisplay;
+    }
+}
