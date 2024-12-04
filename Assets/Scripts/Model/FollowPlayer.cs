@@ -30,9 +30,10 @@ public class FollowPlayer : MonoBehaviour
             if (centerEyeCamera != null)
             {
                 Vector3 targetPosition = centerEyeCamera.position;
-                targetPosition.x = mainCameraRig.transform.position.x + positionOffset.x;
+                targetPosition.x = mainCameraRig.transform.position.x + positionOffset.x + mainCameraRig.centerEyeAnchor.position.x ;
                 targetPosition.z = mainCameraRig.transform.position.z + positionOffset.z + mainCameraRig.centerEyeAnchor.position.z;
-
+                
+                
                 transform.position = targetPosition;
 
                 transform.rotation = Quaternion.Euler(rotationOffset);
