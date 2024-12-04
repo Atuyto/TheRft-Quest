@@ -24,7 +24,7 @@ public class LightTrigger : MonoBehaviour
     public string lightID;
     public static List<LightTrigger> allLights = new List<LightTrigger>();
 
-    public static List<string> correctSequence = new List<string> { "Red", "Green", "Blue" };
+    public static List<string> correctSequence = new List<string> { "Red", "Green", "Blue", "Blue", "Yellow", "Red" };
 
     void Start()
     {
