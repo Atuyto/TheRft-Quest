@@ -31,6 +31,7 @@ using System.Linq;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.PlayerLoop;
 
 /// <summary>
 /// Enables Virtual Keyboard integration.
@@ -301,6 +302,7 @@ public class OVRVirtualKeyboard : MonoBehaviour
         {
             this.keyboard_ = keyboard;
         }
+
 
         public void OnEvent(OVRPlugin.EventDataBuffer eventDataBuffer)
         {

@@ -7,6 +7,7 @@ public class CustomKeyboard : MonoBehaviour
 {
 
     public OVRVirtualKeyboard keyboard;
+    private string text;
 
     void Start()
     {
@@ -15,6 +16,13 @@ public class CustomKeyboard : MonoBehaviour
 
         if (keyboard != null)
         {
+
+            keyboard.CommitTextEvent?.RemoveAllListeners();
+            keyboard.BackspaceEvent?.RemoveAllListeners();
+            keyboard.EnterEvent?.RemoveAllListeners();
+            keyboard.KeyboardShownEvent?.RemoveAllListeners();
+            keyboard.KeyboardHiddenEvent?.RemoveAllListeners();
+
             // S'abonner aux événements
             keyboard.CommitTextEvent.AddListener(OnCommitText);
             keyboard.BackspaceEvent.AddListener(OnBackspace);
@@ -39,11 +47,7 @@ public class CustomKeyboard : MonoBehaviour
 
     private void OnCommitText(string text)
     {
-        WebSocketManager webSocketManager = FindObjectOfType<WebSocketManager>();
-        Message message = new Message(text, "1", "2");
-        webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
-        Debug.Log("Text committed: " + text);
-        // Ajoutez votre logique ici
+        this.text += text;
     }
 
     private void OnBackspace()
@@ -54,7 +58,11 @@ public class CustomKeyboard : MonoBehaviour
 
     private void OnEnter()
     {
-        
+        WebSocketManager webSocketManager = FindObjectOfType<WebSocketManager>();
+        Message message = new Message(this.text, "1", "2");
+        webSocketManager.SendMessage(JsonConvert.SerializeObject(message));
+        this.text = "";
+
         Debug.Log("Enter pressed");
         // Ajoutez votre logique ici
     }

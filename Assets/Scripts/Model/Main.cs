@@ -17,7 +17,6 @@ public class Main : MonoBehaviour
             Instance = this;
             systemMessage = new ObservableList<SystemMessage>();
             DontDestroyOnLoad(gameObject);
-            keyboardEventListenerManager = FindObjectOfType<EnventListener>();
         }
         else
         {
