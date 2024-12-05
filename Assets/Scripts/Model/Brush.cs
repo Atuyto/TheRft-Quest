@@ -118,7 +118,7 @@ public class BrushTrigger : MonoBehaviour
         if (allFilledCorrectly)
         {
             Debug.Log("Toutes les zones sont remplies correctement !");
-            StartCoroutine(WaitAndLoadScene(2f, "FreeScene"));
+            StartCoroutine(WaitAndLoadScene(2f, "End"));
         }
         else
         {
