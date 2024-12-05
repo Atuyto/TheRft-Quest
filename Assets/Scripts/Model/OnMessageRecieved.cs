@@ -28,7 +28,9 @@ public class OnMessageRecieved : MonoBehaviour
             return;
         }*/
         //readyText.gameObject.SetActive(true);
-        
+        if ( lastMessagesRecieved.title == "Oculus"){
+            return;
+        }
         switch (lastMessagesRecieved.code)
         {
             case "12501": // CODE Enigme 2
