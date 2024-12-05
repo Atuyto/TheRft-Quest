@@ -24,11 +24,12 @@ public class OnMessageRecieved : MonoBehaviour
     private void onMessageRecieved(List<SystemMessage> systemMessages)
     {
         lastMessagesRecieved = systemMessages[systemMessages.Count - 1];
-        if (lastMessagesRecieved.title == "Oculus"){
+        /*if (lastMessagesRecieved.title == "Oculus"){
             return;
-        }
-        readyText.gameObject.SetActive(true);
-        /*switch (lastMessagesRecieved.code)
+        }*/
+        //readyText.gameObject.SetActive(true);
+        
+        switch (lastMessagesRecieved.code)
         {
             case "12501": // CODE Enigme 2
                 SceneManager.LoadScene("Enigma2");
@@ -39,6 +40,6 @@ public class OnMessageRecieved : MonoBehaviour
             default:
                 //TODO
                 break;
-        }*/
+        }
     }
 }
